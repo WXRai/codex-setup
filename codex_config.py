@@ -138,7 +138,7 @@ def setup(url, key):
         base_url = url
         print("URL: {}".format(base_url))
     else:
-        base_url = input("Enter API Base URL (e.g. api.openrouter.ai): ").strip()
+        base_url = input("Enter API Base URL (例: azapi.com.cn): ").strip()
     
     if key:
         api_key = key
