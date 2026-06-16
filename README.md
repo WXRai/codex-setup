@@ -9,7 +9,7 @@
 | 文件 | 作用 |
 |------|------|
 | `codex_config.py` | 核心配置脚本 |
-| `setup.bat` | Windows 双击启动器 |
+| `setup.bat` | 检查python是否安装 |
 
 ---
 
