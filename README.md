@@ -1,6 +1,6 @@
 # Codex CLI 第三方 API 配置工具
 
-为 OpenAI Codex CLI 快速配置第三方兼容 API（如 azapi.com.cn、自建代理等），只需填入 URL 和 Key 即可一键完成。
+为 OpenAI Codex CLI 快速配置第三方兼容 API（如 aigc-token.com、azapi.com.cn、自建代理等），只需填入 URL 和 Key 即可一键完成。
 
 ---
 
