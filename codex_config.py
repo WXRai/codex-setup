@@ -17,8 +17,8 @@ import shutil
 import sys
 from pathlib import Path
 
-SCRIPT_VERSION = "3.0"
-PROVIDER_NAME = "openai"
+SCRIPT_VERSION = "3.1"
+PROVIDER_NAME = "aigc-token"
 
 
 def get_codex_dir():
@@ -55,7 +55,7 @@ def generate_config_toml(base_url):
 model_provider = "{provider}"
 
 [model_providers.{provider}]
-name = "OpenAI"
+name = "aigc-token"
 base_url = "{url}"
 wire_api = "responses"
 requires_openai_auth = true
@@ -206,6 +206,31 @@ def setup(url, key):
     print(toml_content)
     print("-" * 40)
     
+    # Important reminder for old sessions compatibility
+    print("")
+    print("=" * 60)
+    print("  IMPORTANT: Set OPENAI_BASE_URL for old sessions")
+    print("=" * 60)
+    print("")
+    print("Your previous conversations were created with the built-in")
+    print("'openai' provider. To make them load through aigc-token.com,")
+    print("you MUST set the OPENAI_BASE_URL environment variable.")
+    print("")
+    print("Run ONE of the following (choose based on your system):")
+    print("")
+    print("  macOS / Linux (current session only):")
+    print('    export OPENAI_BASE_URL="{}"'.format(base_url))
+    print("    open -a \"Codex\"")
+    print("")
+    print("  macOS / Linux (permanent, recommended):")
+    print('    echo \'export OPENAI_BASE_URL="{}"\' >> ~/.zshenv'.format(base_url))
+    print("  Then fully quit Codex (Cmd+Q) and reopen.")
+    print("")
+    print("  Windows (PowerShell, current session):")
+    print('    $env:OPENAI_BASE_URL="{}"'.format(base_url))
+    print("  Windows (permanent, System Settings -> Environment Variables)")
+    print('    OPENAI_BASE_URL = {}'.format(base_url))
+    print("")
     print("Test commands:")
     print("  codex --version")
     print("  codex")
@@ -274,6 +299,8 @@ def clear():
     
     print("")
     print("All configuration cleared.")
+    print("  NOTE: OPENAI_BASE_URL may still be set in your shell profile.")
+    print("  Remove it manually from ~/.zshenv or system env vars if needed.")
     print("")
 
 
