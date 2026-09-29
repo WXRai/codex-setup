@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 SCRIPT_VERSION = "3.0"
-PROVIDER_NAME = "custom"
+PROVIDER_NAME = "openai"
 
 
 def get_codex_dir():
@@ -55,7 +55,7 @@ def generate_config_toml(base_url):
 model_provider = "{provider}"
 
 [model_providers.{provider}]
-name = "Custom Provider"
+name = "OpenAI"
 base_url = "{url}"
 wire_api = "responses"
 requires_openai_auth = true
