@@ -50,6 +50,14 @@ python codex_config.py --show
 
 # 清除配置
 python codex_config.py --clear
+### mac运行方式：终端命令行运行
+
+```bash
+# 1. 打开终端，cd 到脚本所在目录
+cd ~/Downloads
+
+# 2. 运行（macOS 自带 Python 3）
+python3 codex_config.py
 ```
 
 ---
